@@ -1,0 +1,27 @@
+<div class="row mb-1">
+  <section [formGroup]="formGroup">
+    <div class="row mb-1">
+      <div class="col-sm-6">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          [formControlName]="control"
+        />&nbsp;
+        <label for="acceptTerms" class="form-check-label"> {{ label }} </label>
+      </div>
+      <div
+        *ngIf="
+          formGroup.controls[control].invalid &&
+          formGroup.controls[control].touched
+        "
+      >
+        <div
+          *ngIf="formGroup.controls[control].errors?.['required']"
+          class="text-danger"
+        >
+          This field is required
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

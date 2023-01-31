@@ -1,0 +1,19 @@
+<div class="row mb-1">
+  <section [formGroup]="formGroup">
+    <div class="row mb-1">
+      <div class="radioBtn">
+        <label class="col-sm-2 col-form-label"> {{ label }}: </label>
+
+        <div *ngFor="let option of option">
+          <input
+            class="form-check-input"
+            type="radio"
+            [value]="option.value"
+            [formControlName]="control"
+          />
+          {{ option.label }}&nbsp;
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,11 @@
+{
+  "country": [
+    { "code": "ind", "name": "INDIA" },
+    { "code": "usa", "name": "USA" },
+    { "code": "dubai", "name": "DUBAI" },
+    { "code": "canada", "name": "CANADA" },
+    { "code": "uae", "name": "UAE" },
+    { "code": "bang", "name": "BANGLADESH" },
+    { "code": "nepal", "name": "NEPAL" }
+  ]
+}

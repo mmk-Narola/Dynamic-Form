@@ -1,0 +1,15 @@
+<div class="row mb-1">
+  <section [formGroup]="formGroup">
+    <div class="row mb-1">
+      <label class="col-sm-2 col-form-label">{{ label | titlecase }}:</label>
+      <div class="col-sm-6">
+        <select class="form-control" [formControlName]="control">
+          <option value="">Select Option</option>
+          <option value="" *ngFor="let option of options" [value]="option.code">
+            {{ option.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </section>
+</div>

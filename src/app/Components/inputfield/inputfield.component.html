@@ -1,0 +1,34 @@
+<div class="row mb-1">
+  <section [formGroup]="formGroup">
+    <div class="row mb-1">
+      <label class="col-sm-2 col-form-label">{{ label }}: </label>
+      <div class="col-sm-6">
+        <input
+          [type]="type"
+          class="form-control"
+          [formControlName]="control"
+          [required]="required"
+        />
+      </div>
+      <div
+        *ngIf="
+          formGroup.controls[control].invalid &&
+          formGroup.controls[control].touched
+        "
+      >
+        <div
+          *ngIf="formGroup.controls[control].errors?.['required']"
+          class="text-danger"
+        >
+          This field is required
+        </div>
+        <div
+          *ngIf="formGroup.controls[control].errors?.['email']"
+          class="text-danger"
+        >
+          Please enter Email
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
