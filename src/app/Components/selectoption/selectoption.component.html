@@ -9,6 +9,19 @@
             {{ option.name }}
           </option>
         </select>
+        <div
+          *ngIf="
+            formGroup.controls[control].invalid &&
+            formGroup.controls[control].touched
+          "
+        >
+          <div
+            *ngIf="formGroup.controls[control].errors?.['required']"
+            class="text-danger"
+          >
+            This field is required
+          </div>
+        </div>
       </div>
     </div>
   </section>
