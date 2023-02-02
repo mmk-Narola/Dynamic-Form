@@ -1,39 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <h1 class="navbar-brand" routerLink="/">Angular Reusablity</h1>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <div class="navlink">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-1">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="dynamic-form-field">
-              DynamicForm-Field
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="dynamic-model-control">
-              DynamicModel-Field
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>
-
-<!-- <div class="container">
+<div class="container">
   <h3 class="text-center mt-4">Dynamic Add Form Control Form Component</h3>
   <div
     class="text-danger text-center"
@@ -109,22 +74,4 @@
 
     {{ dynamicFormGroup.value | json }}
   </div>
-</div> -->
-
-<!-- <div class="row mb-1">
-              <div class="radioBtn">
-                <label class="col-sm-2 col-form-label">
-                  {{ form_elem.label }}:
-                </label>
-
-                <div *ngFor="let option of form_elem.options">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    [value]="option.value"
-                    [formControlName]="form_elem.name"
-                  />
-                  {{ option.label }}&nbsp;
-                </div>
-              </div>
-            </div> -->
+</div>

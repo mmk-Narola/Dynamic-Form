@@ -2,6 +2,7 @@
 // import countries from './countries.json';
 import { state } from './states';
 import { country } from './countries';
+import { ValidatorFn } from '@angular/forms';
 
 const form_template = [
   {
@@ -10,6 +11,7 @@ const form_template = [
     type: 'input',
     fieldType: 'text',
     validation: 'required',
+    validators: 'minLength',
   },
   {
     name: 'lastName',

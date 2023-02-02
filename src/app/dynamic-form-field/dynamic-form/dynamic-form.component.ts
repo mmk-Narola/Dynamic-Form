@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import form_template from './dynamic-form-field/formFields/formField';
+import form_template from '../formFields/formField';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-dynamic-form',
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.scss'],
 })
-export class AppComponent implements OnInit {
-  title = 'DynamicForms';
+export class DynamicFormComponent implements OnInit {
   formField = form_template;
   dynamicFormGroup: FormGroup;
   isSubmiit = false;

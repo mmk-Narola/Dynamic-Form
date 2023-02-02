@@ -9,6 +9,8 @@ import { RadiobuttonComponent } from './Components/radiobutton/radiobutton.compo
 import { CheckboxComponent } from './Components/checkbox/checkbox.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextareaComponent } from './Components/textarea/textarea.component';
+import { DynamicFormComponent } from './dynamic-form-field/dynamic-form/dynamic-form.component';
+import { DynamicModelControlComponent } from './dynamic-form-model/dynamic-model-control/dynamic-model-control.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { TextareaComponent } from './Components/textarea/textarea.component';
     RadiobuttonComponent,
     CheckboxComponent,
     TextareaComponent,
+    DynamicFormComponent,
+    DynamicModelControlComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
