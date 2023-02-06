@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import form_template from '../formFields/formField';
 @Component({
   selector: 'app-dynamic-form',
@@ -11,18 +16,26 @@ export class DynamicFormComponent implements OnInit {
   dynamicFormGroup: FormGroup;
   isSubmiit = false;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    let formGroup = {};
-
+    // Method - 1;
+    const formControl = {};
     form_template.forEach((formTemplate) => {
-      formGroup[formTemplate.name] = new FormControl('', [
+      formControl[formTemplate.name] = new FormControl('', [
         Validators[formTemplate.validation],
       ]);
     });
+    this.dynamicFormGroup = new FormGroup(formControl);
 
-    this.dynamicFormGroup = new FormGroup(formGroup);
+    // Method - 2;
+    // this.dynamicFormGroup = this.formBuilder.group({});
+    // this.formField.forEach((formTemplate) => {
+    //   this.dynamicFormGroup.addControl(
+    //     formTemplate.name,
+    //     new FormControl('', [Validators[formTemplate.validation]])
+    //   );
+    // });
   }
 
   get f() {
