@@ -20,22 +20,26 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit(): void {
     // Method - 1;
-    const formControl = {};
-    form_template.forEach((formTemplate) => {
-      formControl[formTemplate.name] = new FormControl('', [
-        Validators[formTemplate.validation],
-      ]);
-    });
-    this.dynamicFormGroup = new FormGroup(formControl);
+    // const formControl = {};
+    // form_template.forEach((formTemplate) => {
+    //   formControl[formTemplate.name] = new FormControl('', [
+    //     Validators[formTemplate.validation],
+    //   ]);
+    // });
+    // this.dynamicFormGroup = new FormGroup(formControl);
 
     // Method - 2;
-    // this.dynamicFormGroup = this.formBuilder.group({});
-    // this.formField.forEach((formTemplate) => {
-    //   this.dynamicFormGroup.addControl(
-    //     formTemplate.name,
-    //     new FormControl('', [Validators[formTemplate.validation]])
-    //   );
-    // });
+    this.dynamicFormGroup = this.formBuilder.group({});
+    this.formField.forEach((formTemplate) => {
+      this.dynamicFormGroup.addControl(
+        formTemplate.name,
+        new FormControl('', [Validators[formTemplate.validation]])
+      );
+    });
+
+    this.dynamicFormGroup.get('file-Upload').valueChanges.subscribe((file) => {
+      console.log('File', file);
+    });
   }
 
   get f() {

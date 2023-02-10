@@ -12,6 +12,7 @@ const form_template = [
     fieldType: 'text',
     validation: 'required',
     validators: 'minLength',
+    required: true,
   },
   {
     name: 'lastName',
@@ -69,6 +70,13 @@ const form_template = [
     validation: 'required',
     name: 'state',
     state: state,
+  },
+  {
+    name: 'file-Upload',
+    label: 'File Image',
+    type: 'input',
+    fieldType: 'file',
+    validation: 'required',
   },
   {
     name: 'terms',

@@ -1,7 +1,9 @@
 <div class="row mb-1">
   <section [formGroup]="formGroup">
     <div class="row mb-1">
-      <label class="col-sm-2 col-form-label">{{ label }}: </label>
+      <label class="col-sm-2 col-form-label">
+        {{ label }} <span *ngIf="required" class="text-danger">*</span>
+      </label>
       <div class="col-sm-6">
         <input
           [type]="type"
@@ -10,6 +12,7 @@
           [required]="required"
         />
       </div>
+      <!-- <div *ngIf="re">*</div> -->
       <div
         *ngIf="
           formGroup.controls[control].invalid &&

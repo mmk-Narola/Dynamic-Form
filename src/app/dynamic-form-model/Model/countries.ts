@@ -1,9 +1,9 @@
 export const country = [
-  { key: 'ind', value: 'INDIA' },
-  { key: 'usa', value: 'USA' },
-  { key: 'dubai', value: 'DUBAI' },
-  { key: 'canada', value: 'CANADA' },
-  { key: 'uae', value: 'UAE' },
-  { key: 'bang', value: 'BANGLADESH' },
-  { key: 'nepal', value: 'NEPAL' },
+  { key: 'INDIA', value: 'ind' },
+  { key: 'USA', value: 'usa' },
+  { key: 'DUBAI', value: 'dubai' },
+  { key: 'CANADA', value: 'canada' },
+  { key: 'UAE', value: 'uae' },
+  { key: 'BANGLADESH', value: 'bang' },
+  { key: 'NEPAL', value: 'nepal' },
 ];

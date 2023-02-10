@@ -1,13 +1,16 @@
-<!-- <div class="container">
+<div class="container">
   <div class="text-danger text-center" *ngIf="userForm.invalid && isSubmiit">
     All form field are required
   </div>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-sm-8 mt-4">
-        <section *ngFor="let field of myForm" class="form-row">
+        <section *ngFor="let field of formFields" class="form-row">
           <div class="row mb-2">
-            <label class="col-2 col-form-label">{{ field.label }} </label>
+            <label class="col-2 col-form-label"
+              >{{ field.label }}
+              <span *ngIf="field.required" class="text-danger">*</span>
+            </label>
             <div class="col-sm-6">
               <div [ngSwitch]="field.controlType">
                 <div *ngSwitchCase="'textbox'">
@@ -18,7 +21,6 @@
                     class="form-control"
                   />
                 </div>
-
                 <div *ngSwitchCase="'radio'" class="mt-2">
                   <div class="radioBtn">
                     <div *ngFor="let opt of field.options">
@@ -54,9 +56,9 @@
                     <option value="">Select State</option>
                     <option
                       *ngFor="let item of field.options"
-                      [value]="item.key"
+                      [value]="item.value"
                     >
-                      {{ item.value }}
+                      {{ item.key }}
                     </option>
                   </select>
                 </div>
@@ -81,8 +83,4 @@
       </div>
     </div>
   </form>
-</div> -->
-<div class="container">
-  <h3 class="text-center mt-4">Dynamic Form Control with model file</h3>
-  <app-form-fields [formFields]="myForm"></app-form-fields>
 </div>

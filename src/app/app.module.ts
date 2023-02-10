@@ -11,7 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextareaComponent } from './Components/textarea/textarea.component';
 import { DynamicFormComponent } from './dynamic-form-field/dynamic-form/dynamic-form.component';
 import { DynamicModelControlComponent } from './dynamic-form-model/dynamic-model-control/dynamic-model-control.component';
-import { DemoCopmComponent } from './demo-copm/demo-copm.component';
+import { DemoCopmComponent } from './demo-component/demo-copm.component';
+import { FormFieldsComponent } from './dynamic-form-model/form-fields/form-fields.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DemoCopmComponent } from './demo-copm/demo-copm.component';
     DynamicFormComponent,
     DynamicModelControlComponent,
     DemoCopmComponent,
+    FormFieldsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

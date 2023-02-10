@@ -1,4 +1,4 @@
-export const state = [
+export const states = [
   { key: 'Andhra Pradesh', value: 'AP' },
   { key: 'Arunachal Pradesh', value: 'AR' },
   { key: 'Assam', value: 'AS' },
