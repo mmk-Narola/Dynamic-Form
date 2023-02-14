@@ -1,7 +1,10 @@
 <div class="row mb-1">
   <section [formGroup]="formGroup">
     <div class="row mb-1">
-      <label class="col-sm-2 col-form-label">{{ label | titlecase }}:</label>
+      <label class="col-sm-2 col-form-label">
+        {{ label | titlecase }}
+        <span *ngIf="required" class="text-danger">*</span>
+      </label>
       <div class="col-sm-6">
         <select class="form-control" [formControlName]="control">
           <option value="">Select Option</option>

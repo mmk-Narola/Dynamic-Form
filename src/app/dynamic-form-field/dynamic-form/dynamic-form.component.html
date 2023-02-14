@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 class="text-center mt-4">Dynamic Add Form Control Form Component</h3>
+  <h5 class="text-center">Dynamic Add Form Control Form Component</h5>
   <div
     class="text-danger text-center"
     *ngIf="dynamicFormGroup.invalid && isSubmiit"
@@ -26,6 +26,7 @@
               [label]="form_elem.label"
               [formGroup]="dynamicFormGroup"
               [control]="form_elem.name"
+              [required]="form_elem.required"
             >
             </app-textarea>
           </div>
@@ -36,6 +37,7 @@
               [label]="form_elem.label"
               [control]="form_elem.name"
               [formGroup]="dynamicFormGroup"
+              [required]="form_elem.required"
             >
             </app-radiobutton>
           </div>
@@ -47,6 +49,7 @@
                 [control]="form_elem.name"
                 [options]="form_elem.country"
                 [label]="form_elem.name"
+                [required]="form_elem.required"
               >
               </app-selectoption>
             </div>
@@ -56,6 +59,7 @@
                 [control]="form_elem.name"
                 [options]="form_elem.state"
                 [label]="form_elem.name"
+                [required]="form_elem.required"
               >
               </app-selectoption>
             </div>

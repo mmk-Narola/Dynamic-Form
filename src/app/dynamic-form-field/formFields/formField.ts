@@ -2,7 +2,6 @@
 // import countries from './countries.json';
 import { state } from './states';
 import { country } from './countries';
-import { ValidatorFn } from '@angular/forms';
 
 const form_template = [
   {
@@ -14,19 +13,20 @@ const form_template = [
     validators: 'minLength',
     required: true,
   },
-  {
-    name: 'lastName',
-    label: 'Last Name',
-    type: 'input',
-    fieldType: 'text',
-    validation: 'required',
-  },
+  // {
+  //   name: 'lastName',
+  //   label: 'Last Name',
+  //   type: 'input',
+  //   fieldType: 'text',
+  //   validation: 'required',
+  // },
   {
     name: 'email',
     label: 'Email',
     type: 'input',
     fieldType: 'email',
     validation: 'email',
+    required: true,
   },
   {
     name: 'password',
@@ -34,6 +34,7 @@ const form_template = [
     type: 'input',
     fieldType: 'password',
     validation: 'required',
+    required: true,
   },
   {
     name: 'mobile',
@@ -41,12 +42,14 @@ const form_template = [
     type: 'input',
     fieldType: 'number',
     validation: 'required',
+    required: true,
   },
   {
     name: 'address',
     label: 'Address',
     type: 'textarea',
     validation: 'required',
+    required: true,
   },
   {
     name: 'gender',
@@ -58,18 +61,21 @@ const form_template = [
       { value: 'female', label: 'Female' },
       { value: 'other', label: 'Other' },
     ],
+    required: true,
   },
   {
     type: 'select',
     validation: 'required',
     name: 'country',
     country: country,
+    required: true,
   },
   {
     type: 'select',
     validation: 'required',
     name: 'state',
     state: state,
+    required: true,
   },
   {
     name: 'file-Upload',
@@ -77,6 +83,7 @@ const form_template = [
     type: 'input',
     fieldType: 'file',
     validation: 'required',
+    required: true,
   },
   {
     name: 'terms',
@@ -87,3 +94,33 @@ const form_template = [
   },
 ];
 export default form_template;
+// import { ValidatorFn } from '@angular/forms';
+// export class form_template {
+//   name: string;
+//   label: string;
+//   type: string;
+//   fieldType: string;
+//   required: boolean;
+//   options: { key: string; value: string }[];
+//   controlType: string;
+//   validators: ValidatorFn[] | null;
+
+//   constructor() {
+//     this.name = '';
+//     this.label = '';
+//     this.type = '';
+//     this.fieldType = '';
+//     this.required = true;
+//     this.options = [];
+//     this.controlType = '';
+//     this.validators = [];
+//   }
+
+//   //      name: 'firstName',
+//   //     label: 'First Name',
+//   //     type: 'input',
+//   //     fieldType: 'text',
+//   //     validation: 'required',
+//   //     validators: 'minLength',
+//   //     required: true,
+// }

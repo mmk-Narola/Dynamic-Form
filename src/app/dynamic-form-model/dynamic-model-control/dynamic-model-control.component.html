@@ -82,7 +82,27 @@
     </div>
   </form>
 </div> -->
-<div class="container">
-  <h3 class="text-center mt-4">Dynamic Form Control with model file</h3>
+<!-- <div class="container">
+  <h3 class="text-center mt-4">Dynamic Form Control with Model File</h3>
   <app-form-fields [formFields]="myForm"></app-form-fields>
-</div>
+</div> -->
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h4 class="text-center">Dynamic Form Control with Model File</h4>
+    <div class="row">
+      <div class="col-sm-8">
+        <section *ngFor="let field of formFields" class="form-row">
+          <app-form-fields [field]="field" [userForm]="userForm">
+          </app-form-fields>
+        </section>
+        <button type="submit" class="btn btn-success col-6 mt-2 mb-2">
+          Submit
+        </button>
+      </div>
+      <div class="col-sm-4">
+        {{ userForm.value | json }}
+      </div>
+    </div>
+  </div>
+</form>

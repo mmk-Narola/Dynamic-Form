@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { DynamicFormComponent } from './dynamic-form-field/dynamic-form/dynamic-form.component';
 import { DynamicModelControlComponent } from './dynamic-form-model/dynamic-model-control/dynamic-model-control.component';
 import { DemoCopmComponent } from './demo-component/demo-copm.component';
+import { DisplayFieldComponent } from './dynamic-form-model/display-field/display-field.component';
 
 const routes: Routes = [
   { path: 'dynamic-form-field', component: DynamicFormComponent },
-  { path: 'dynamic-model-control', component: DynamicModelControlComponent },
+  { path: 'dynamic-model-control', component: DisplayFieldComponent },
   { path: 'demo', component: DemoCopmComponent },
 ];
 

@@ -1,5 +1,5 @@
 import { state } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -21,104 +21,31 @@ import { checkBox } from '../Model/formCheckBox';
   styleUrls: ['./dynamic-model-control.component.scss'],
 })
 export class DynamicModelControlComponent implements OnInit {
-  // userForm: FormGroup;
-  // isSubmiit = false;
-  myForm: FormElementControls<string | boolean>[] = [
-    new textBox({
-      key: 'fname',
-      label: 'First Name',
-      type: 'text',
-      required: true,
-    }),
+  @Input() formFields: FormElementControls<string | boolean>[] | null = [];
+  userForm: FormGroup;
 
-    new textBox({
-      key: 'lname',
-      label: 'Last Name',
-      type: 'text',
-      required: false,
-    }),
+  constructor() {}
 
-    new textBox({
-      key: 'email',
-      label: 'Email',
-      type: 'email',
-      required: true,
-      validators: [Validators.email],
-    }),
+  ngOnInit(): void {
+    this.toFormGroup();
+  }
 
-    new textBox({
-      key: 'password',
-      label: 'Password',
-      type: 'password',
-      required: true,
-      validators: [Validators.minLength(6)],
-    }),
+  private toFormGroup() {
+    const group = {};
+    this.formFields.forEach((field) => {
+      group[field.key] = field.required
+        ? new FormControl('', [...field.validators, Validators.required])
+        : new FormControl('', field.validators);
+    });
+    this.userForm = new FormGroup(group);
+  }
 
-    new textBox({
-      key: 'dob',
-      label: 'DOB',
-      type: 'date',
-      required: true,
-    }),
-
-    new radiBtn({
-      key: 'gender',
-      label: 'Gender',
-      type: 'radio',
-      required: true,
-      options: [
-        { key: 'male', value: 'Male' },
-        { key: 'female', value: 'Female' },
-        { key: 'other', value: 'Other' },
-      ],
-    }),
-
-    new textArea({
-      key: 'address',
-      label: 'Address',
-      required: true,
-    }),
-
-    new textBox({
-      type: 'number',
-      key: 'zipCode',
-      label: 'ZipCode',
-      required: true,
-      validators: [Validators.maxLength(3)],
-    }),
-
-    new selectOption({
-      key: 'states',
-      label: 'State',
-      options: states,
-      required: true,
-    }),
-
-    new selectOption({
-      key: 'country',
-      label: 'Country',
-      options: country,
-      required: true,
-    }),
-
-    new checkBox({
-      key: 'terms',
-      value: 'Agree to terms',
-    }),
-  ];
-
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {}
+  onSubmit(): void {
+    this.userForm.markAllAsTouched();
+    if (this.userForm.invalid) {
+      return;
+    }
+    console.log(this.userForm.value);
+    this.userForm.reset();
+  }
 }
-
-// const group = {};
-// this.myForm.forEach((field) => {
-//   group[field.key] = field.required
-//     ? new FormControl(field.value || '', [
-//         ...field.validators,
-//         Validators.required,
-//       ])
-//     : new FormControl(field.value || '', field.validators);
-// });
-// this.userForm = new FormGroup(group);

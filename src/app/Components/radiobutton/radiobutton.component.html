@@ -2,7 +2,10 @@
   <section [formGroup]="formGroup">
     <div class="row mb-1">
       <div class="radioBtn">
-        <label class="col-sm-2 col-form-label"> {{ label }}: </label>
+        <label class="col-sm-2 col-form-label">
+          {{ label }} <span *ngIf="required" class="text-danger">*</span>
+        </label>
+        <!-- <label class="col-sm-2 col-form-label"> {{ label }}: </label> -->
 
         <div *ngFor="let option of option">
           <input

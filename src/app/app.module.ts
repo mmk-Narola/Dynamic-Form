@@ -13,6 +13,7 @@ import { DynamicFormComponent } from './dynamic-form-field/dynamic-form/dynamic-
 import { DynamicModelControlComponent } from './dynamic-form-model/dynamic-model-control/dynamic-model-control.component';
 import { DemoCopmComponent } from './demo-component/demo-copm.component';
 import { FormFieldsComponent } from './dynamic-form-model/form-fields/form-fields.component';
+import { DisplayFieldComponent } from './dynamic-form-model/display-field/display-field.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormFieldsComponent } from './dynamic-form-model/form-fields/form-field
     DynamicModelControlComponent,
     DemoCopmComponent,
     FormFieldsComponent,
+    DisplayFieldComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

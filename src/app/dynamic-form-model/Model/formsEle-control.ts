@@ -12,6 +12,7 @@ export class FormElementControls<T> {
   validators: ValidatorFn[] | null;
   readonly: boolean;
   description?: string;
+  fileType?: string;
 
   constructor(
     options: {
@@ -26,6 +27,7 @@ export class FormElementControls<T> {
       validators?: ValidatorFn[] | null;
       readonly?: boolean;
       description?: string;
+      fileType?: string;
     } = {}
   ) {
     this.value = options.value;
@@ -39,5 +41,6 @@ export class FormElementControls<T> {
     this.validators = options.validators || [];
     this.readonly = !!options.readonly;
     this.description = options.description || '';
+    this.fileType = options.fileType || '';
   }
 }
