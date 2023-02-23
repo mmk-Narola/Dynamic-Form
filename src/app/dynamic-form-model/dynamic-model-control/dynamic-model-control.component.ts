@@ -27,10 +27,10 @@ export class DynamicModelControlComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.toFormGroup();
+    this.FormGroup();
   }
 
-  private toFormGroup() {
+  private FormGroup() {
     const group = {};
     this.formFields.forEach((field) => {
       group[field.key] = field.required

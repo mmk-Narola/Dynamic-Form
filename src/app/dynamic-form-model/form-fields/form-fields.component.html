@@ -77,167 +77,37 @@
                 />&nbsp; {{ field.value }}
               </div>
             </div>
+
+            <div
+              *ngIf="userForm.get(field.key).touched && userForm.get(field.key).errors?.['required']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              This Field is Required
+            </div>
+
+            <div
+              *ngIf="userForm.get(field.key).invalid && userForm.get(field.key).errors?.['email']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              please email 'abc@gmail.com'
+            </div>
+
+            <div
+              *ngIf="userForm.get(field.key).errors?.['minlength']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              Please Enter 6 Character
+            </div>
+
+            <div
+              *ngIf="userForm.get(field.key).errors?.['maxlength']"
+              class="alert alert-danger ml-3 p-2 fadeInDown animated"
+            >
+              Zip Code Required Max 3 Character
+            </div>
           </div>
         </div>
       </section>
-      <div
-        *ngIf="userForm.get(field.key).touched && userForm.get(field.key).errors?.['required']"
-        class="text-danger"
-      >
-        This Field is Required
-      </div>
-
-      <div
-        *ngIf="userForm.get(field.key).invalid && userForm.get(field.key).errors?.['email']"
-        class="text-danger"
-      >
-        please email 'abc@gmail.com'
-      </div>
-
-      <div
-        *ngIf="userForm.get(field.key).errors?.['minlength']"
-        class="text-danger"
-      >
-        Please Enter 6 Character
-      </div>
-
-      <div
-        *ngIf="userForm.get(field.key).errors?.['maxlength']"
-        class="text-danger"
-      >
-        Zip Code Required Max 3 Character
-      </div>
     </div>
   </div>
 </div>
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <se [formGroup]="userForm">
-        <div class="row">
-          <div class="col-sm-8 mt-4">
-            <section *ngFor="let field of formFields" class="form-row">
-              <div class="row mb-2">
-                <label class="col-2 col-form-label"
-                  >{{ field.label }}
-                  <span *ngIf="field.required" class="text-danger">*</span>
-                </label>
-                <div class="col-sm-6">
-                  <div [ngSwitch]="field.controlType">
-                    <div *ngSwitchCase="'textbox'">
-                      <input
-                        [type]="field.type"
-                        [id]="field.key"
-                        [formControlName]="field.key"
-                        class="form-control"
-                      />
-                    </div>
-                    <div *ngSwitchCase="'radio'" class="mt-2">
-                      <div class="radioBtn">
-                        <div *ngFor="let opt of field.options">
-                          <input
-                            type="radio"
-                            [id]="field.key"
-                            [name]="field.key"
-                            [value]="opt.key"
-                            [formControlName]="field.key"
-                            class="form-check-input"
-                          />
-                          {{ opt.value }}&nbsp;
-                        </div>
-                      </div>
-                    </div>
-
-                    <div *ngSwitchCase="'textarea'">
-                      <textarea
-                        [id]="field.key"
-                        class="form-control"
-                        [formControlName]="field.key"
-                      >
-                      </textarea>
-                    </div>
-
-                    <div *ngSwitchCase="'select'">
-                      <select
-                        [name]="field.key"
-                        [id]="field.key"
-                        [formControlName]="field.key"
-                        class="form-control"
-                      >
-                        <option value="">Select State</option>
-                        <option
-                          *ngFor="let item of field.options"
-                          [value]="item.value"
-                        >
-                          {{ item.key }}
-                        </option>
-                      </select>
-                    </div>
-                    <div *ngSwitchCase="'checkbox'">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        [id]="field.key"
-                        [name]="field.key"
-                        [formControlName]="field.key"
-                      />&nbsp; {{ field.value }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <button type="submit" class="btn btn-primary col-4 mb-2">
-              Submit
-            </button>
-          </div>
-
-          <div class="col-sm-4 mt-4">
-            {{ userForm.value | json }}
-          </div>
-        </div>
-      </se>
-    </div>
-  </div>
-</div> -->
-<!-- *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required" -->
-<!-- <div *ngFor="let form of formFields">
-  <div
-    *ngIf="userForm.get(form.key).touched && isSubmiit || userForm.get(form.key).errors?.['required']"
-    class="text-danger"
-  >
-    This field Required
-  </div>
-</div> -->
-
-<!-- <div
-            *ngIf="userForm.get(field.key).touched && isSubmiit || userForm.get(field.key).errors?.['required']"
-            class="text-danger"
-          >
-            This field Required
-          </div> -->
-
-<!-- <div
-            *ngIf="(userFormControl[field.key].touched || isSubmiit) && userFormControl[field.key].errors?.['required']"
-          >
-            This field Required
-          </div> -->
-<!-- <span
-            *ngIf="(f['email'].touched || submitted) && f['email'].errors?.['required']"
-          >
-            Email is required
-          </span> -->
-
-<!-- <div *ngFor="let form of formFields">
-            <div
-              *ngIf="(userFormControl[form.key].touched || isSubmiit) && userFormControl[form.key].errors?.['required']"
-            >
-              This field Required
-            </div>
-            <div
-              *ngIf="userForm.get(form.key).touched && isSubmiit || userForm.get(form.key).errors?.['required']"
-              class="text-danger"
-            >
-              This field Required
-            </div>
-          </div> -->

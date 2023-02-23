@@ -96,7 +96,11 @@
           <app-form-fields [field]="field" [userForm]="userForm">
           </app-form-fields>
         </section>
-        <button type="submit" class="btn btn-success col-6 mt-2 mb-2">
+        <button
+          type="submit"
+          class="btn btn-success col-6 mt-2 mb-2"
+          [disabled]="userForm.invalid"
+        >
           Submit
         </button>
       </div>

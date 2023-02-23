@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { InputfieldComponent } from './Components/inputfield/inputfield.component';
 import { SelectoptionComponent } from './Components/selectoption/selectoption.component';
@@ -14,6 +15,7 @@ import { DynamicModelControlComponent } from './dynamic-form-model/dynamic-model
 import { DemoCopmComponent } from './demo-component/demo-copm.component';
 import { FormFieldsComponent } from './dynamic-form-model/form-fields/form-fields.component';
 import { DisplayFieldComponent } from './dynamic-form-model/display-field/display-field.component';
+import { DynamicFormJsonComponent } from './DynamicForm-JSON/dynamic-form-json/dynamic-form-json.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,13 @@ import { DisplayFieldComponent } from './dynamic-form-model/display-field/displa
     FormFieldsComponent,
     DisplayFieldComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
