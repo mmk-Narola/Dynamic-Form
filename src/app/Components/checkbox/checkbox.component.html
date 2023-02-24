@@ -16,12 +16,14 @@
         "
       >
         <div
-          *ngIf="formGroup.controls[control].errors?.['required']"
+          *ngIf="formGroup.controls[control].errors?.['requiredTrue']"
           class="text-danger"
         >
-          This field is required
+          Check box required True
         </div>
       </div>
+
+      >
     </div>
   </section>
 </div>

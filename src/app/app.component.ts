@@ -38,3 +38,113 @@ export class AppComponent implements OnInit {
     console.log(this.dynamicFormGroup.value);
   }
 }
+
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "button",
+//   "value": "Button",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "color",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "datetime-local",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "hidden",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "url",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "week",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "image",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "tel",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "month",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "range",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "search",
+//   "validators": {
+//     "required": true
+//   }
+// },
+// {
+//   "name": " ",
+//   "label": " :",
+//   "type": "input",
+//   "fieldType": "time",
+//   "validators": {
+//     "required": true
+//   }
+// },

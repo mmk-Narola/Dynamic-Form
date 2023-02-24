@@ -1,1 +1,120 @@
-<p>dynamic-form-json works!</p>
+<div class="container">
+  <h3 class="text-center mt-4">DynamicForm with JSON</h3>
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm-8">
+        <div
+          *ngFor="let field of formFields"
+          class="form-row"
+          [ngSwitch]="field.type"
+        >
+          <!-- <label class="col-md-2 form-control-label" [attr.for]="field.label">
+            {{ field.label }}
+            <strong class="text-danger" *ngIf="field.validators.required">
+              *
+            </strong>
+          </label> -->
+          <div class="col-md-12 mb-2">
+            <div *ngSwitchCase="'input'">
+              <app-inputfield
+                [type]="field.fieldType"
+                [label]="field.label"
+                [formGroup]="dynamicForm"
+                [control]="field.name"
+                [validator]="field.validators"
+              >
+              </app-inputfield>
+            </div>
+            <div *ngSwitchCase="'textarea'">
+              <app-textarea
+                [label]="field.label"
+                [formGroup]="dynamicForm"
+                [control]="field.name"
+                [validator]="field.validators"
+              >
+              </app-textarea>
+            </div>
+
+            <div *ngSwitchCase="'radio'">
+              <app-radiobutton
+                [option]="field.options"
+                [label]="field.label"
+                [control]="field.name"
+                [formGroup]="dynamicForm"
+                [validator]="field.validators"
+              >
+              </app-radiobutton>
+              <!-- <div class="radioBtn"></div> -->
+            </div>
+
+            <div *ngSwitchCase="'select'">
+              <app-selectoption
+                [options]="field.options"
+                [label]="field.label"
+                [control]="field.name"
+                [formGroup]="dynamicForm"
+                [validator]="field.validators"
+              >
+              </app-selectoption>
+            </div>
+
+            <div *ngSwitchCase="'checkbox'">
+              <label class="form-check-label">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  [formControlName]="field.name"
+                />
+                {{ field.value }}
+              </label>
+            </div>
+          </div>
+
+          <!-- <div
+            *ngIf="
+              dynamicForm.get(field.name)?.errors?.['required'] &&
+              dynamicForm.get(field.name)?.dirty
+            "
+            class="alert alert-danger col-md-6 p-2 fadeInDown animated"
+          >
+            This Field is required
+          </div>
+          <div
+            *ngIf="
+              dynamicForm.get(field.name)?.errors?.['minlength']
+            "
+            class="alert alert-danger col-md-6 p-2 fadeInDown animated"
+          >
+            Minimum Text
+          </div>
+          <div
+            *ngIf="
+              dynamicForm.get(field.name)?.errors?.['pattern']
+            "
+            class="alert alert-danger col-md-6 p-2 fadeInDown animated"
+          >
+            Only Text Accept
+          </div>
+          <div
+            *ngIf="
+              dynamicForm.get(field.name)?.errors?.['email']
+            "
+            class="alert alert-danger col-md-6 p-2 fadeInDown animated"
+          >
+            abc@gmail.com
+          </div> -->
+        </div>
+        <button
+          type="submit"
+          [disabled]="dynamicForm.invalid"
+          class="btn btn-success"
+        >
+          Submit
+        </button>
+      </div>
+      <div class="col-sm-4">
+        {{ dynamicForm.value | json }}
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,8 +1,9 @@
 <div class="row mb-1">
   <section [formGroup]="formGroup">
     <div class="row mb-1">
-      <label class="col-sm-2 col-form-label">
-        {{ label }} <span *ngIf="required" class="text-danger">*</span>
+      <label class="col-sm-3 col-form-label">
+        {{ label }}
+        <!-- <span *ngIf="validator.required" class="text-danger">*</span> -->
       </label>
       <div class="col-sm-8">
         <input
@@ -11,25 +12,59 @@
           [formControlName]="control"
           [required]="required"
         />
-      </div>
-      <!-- <div *ngIf="re">*</div> -->
-      <div
-        *ngIf="
-          formGroup.controls[control].invalid &&
-          formGroup.controls[control].touched
-        "
-      >
+
         <div
-          *ngIf="formGroup.controls[control].errors?.['required']"
-          class="text-danger"
+          *ngIf="
+            formGroup.controls[control].invalid &&
+            formGroup.controls[control].dirty
+          "
         >
-          This field is required
+          <div
+            *ngIf="formGroup.controls[control].errors?.['required']"
+            class="alert alert-danger ml-3 p-2 fadeInDown animated"
+          >
+            This field is required
+          </div>
         </div>
+
         <div
           *ngIf="formGroup.controls[control].errors?.['email']"
-          class="text-danger"
+          class="alert alert-danger ml-3 p-2 fadeInDown animated"
         >
           Please enter Email
+        </div>
+
+        <div
+          *ngIf="formGroup.controls[control].errors?.['maxlength']"
+          class="alert alert-danger ml-3 p-2 fadeInDown animated"
+        >
+          Required maximum 5 input
+        </div>
+
+        <div
+          *ngIf="formGroup.controls[control].errors?.['minlength']"
+          class="alert alert-danger ml-3 p-2 fadeInDown animated"
+        >
+          Required minimum 3 input
+        </div>
+
+        <div
+          *ngIf="formGroup.controls[control].errors?.['pattern']"
+          class="alert alert-danger ml-3 p-2 fadeInDown animated"
+        >
+          Accept Text Only
+        </div>
+        <div
+          *ngIf="formGroup.controls[control].errors?.['min']"
+          class="alert alert-danger ml-3 p-2 fadeInDown animated"
+        >
+          Min 1
+        </div>
+        <div
+          *ngIf="formGroup.controls[control].errors?.['max']"
+          class="alert alert-danger ml-3 p-2 fadeInDown animated"
+        >
+          Max 10
         </div>
       </div>
     </div>

@@ -14,9 +14,10 @@ interface Option {
 export class SelectoptionComponent implements OnInit {
   @Input() control?: string;
   @Input() formGroup?: FormGroup;
-  @Input() options?: any;
+  @Input() options?: any[];
   @Input() label?: string;
   @Input() required?: boolean = false;
+  @Input() validator?: any;
 
   constructor() {}
 

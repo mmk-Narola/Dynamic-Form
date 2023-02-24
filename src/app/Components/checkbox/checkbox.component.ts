@@ -11,6 +11,7 @@ export class CheckboxComponent implements OnInit {
   @Input() formGroup?: FormGroup;
   @Input() label?: string;
   @Input() required?: boolean = false;
+  @Input() validator?: any;
 
   constructor() {}
 

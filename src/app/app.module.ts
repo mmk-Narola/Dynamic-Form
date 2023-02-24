@@ -30,6 +30,7 @@ import { DynamicFormJsonComponent } from './DynamicForm-JSON/dynamic-form-json/d
     DemoCopmComponent,
     FormFieldsComponent,
     DisplayFieldComponent,
+    DynamicFormJsonComponent,
   ],
   imports: [
     BrowserModule,

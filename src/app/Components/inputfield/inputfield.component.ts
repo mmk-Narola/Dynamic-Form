@@ -13,6 +13,7 @@ export class InputfieldComponent implements OnInit {
   @Input() placeholder?: string;
   @Input() label?: string;
   @Input() required?: boolean = false;
+  @Input() validator?: any;
 
   constructor() {}
 

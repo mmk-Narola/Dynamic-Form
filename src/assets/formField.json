@@ -4,30 +4,75 @@
       "name": "firstName",
       "label": "First name:",
       "value": "",
-      "type": "text",
+      "type": "input",
+      "fieldType": "text",
       "validators": {
         "required": true,
-        "pattern": "^[a-zA-Z]+$"
+        "pattern": "^[a-zA-Z0-9]+$",
+        "maxLength": 5
       }
     },
     {
       "name": "lastName",
       "label": "Last name:",
       "value": "",
-      "type": "text",
+      "type": "input",
+      "fieldType": "text",
       "validators": {
-        "required": true,
-        "pattern": "^[a-zA-Z]+$"
+        "required": false,
+        "pattern": "^[a-zA-Z]+$",
+        "minLength": 3
+      }
+    },
+    {
+      "name": "don",
+      "label": "DOB:",
+      "type": "input",
+      "fieldType": "date",
+      "validators": {
+        "required": true
+      }
+    },
+    {
+      "name": "age",
+      "label": "Age",
+      "value": "",
+      "type": "input",
+      "fieldType": "number",
+      "validators": {
+        "required": false,
+        "min": 1,
+        "max": 10
       }
     },
     {
       "name": "email",
       "label": "Email:",
       "value": "",
-      "type": "text",
+      "type": "input",
+      "fieldType": "email",
       "validators": {
         "required": true,
         "email": true
+      }
+    },
+    {
+      "name": "password",
+      "label": "Password:",
+      "type": "input",
+      "fieldType": "password",
+      "validators": {
+        "required": true,
+        "minLength": 3
+      }
+    },
+    {
+      "name": "file",
+      "label": "File Upload:",
+      "type": "input",
+      "fieldType": "file",
+      "validators": {
+        "required": true
       }
     },
     {
@@ -35,9 +80,7 @@
       "label": "Gender:",
       "value": "",
       "type": "radio",
-      "validators": {
-        "required": true
-      },
+      "validators": {},
       "options": [
         {
           "_id": "1",
@@ -57,35 +100,42 @@
       ]
     },
     {
-      "name": "country",
-      "label": "Country:",
+      "name": "profession",
+      "label": "Profession",
       "value": "",
       "type": "select",
       "validators": {
         "required": true
       },
-      "options": []
+      "options": [
+        {
+          "_id": "1",
+          "name": "Engineer",
+          "sortname": "eng"
+        },
+        {
+          "_id": "2",
+          "name": "Doctor",
+          "sortname": "dr"
+        },
+        {
+          "_id": "3",
+          "name": "Teacher",
+          "sortname": "tech"
+        },
+        {
+          "_id": "4",
+          "name": "Goverment Officer",
+          "sortname": "office"
+        },
+        {
+          "_id": "5",
+          "name": "Worker",
+          "sortname": "worker"
+        }
+      ]
     },
-    {
-      "name": "state",
-      "label": "State:",
-      "value": "",
-      "type": "select",
-      "validators": {
-        "required": true
-      },
-      "options": []
-    },
-    {
-      "name": "city",
-      "label": "City:",
-      "value": "",
-      "type": "select",
-      "validators": {
-        "required": true
-      },
-      "options": []
-    },
+
     {
       "name": "comments",
       "label": "Comments",

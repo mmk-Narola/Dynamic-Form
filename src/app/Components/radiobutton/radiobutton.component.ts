@@ -15,9 +15,10 @@ export class RadiobuttonComponent implements OnInit {
   @Input() control?: string;
   @Input() formGroup?: FormGroup;
   @Input() type?: string;
-  @Input() option?: Option[];
+  @Input() option?: any[];
   @Input() label?: string;
   @Input() required?: boolean = false;
+  @Input() validator?: any;
 
   constructor() {}
 
