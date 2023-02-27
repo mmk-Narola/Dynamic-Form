@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "id": "fn",
+      "name": "firstName",
+      "label": "First name:",
+      "type": "input",
+      "fieldType": "text",
+      "required": "true",
+      "validations": [
+        {
+          "name": "required",
+          "validator": "required",
+          "message": "Name Required"
+        }
+      ]
+    },
+    {
+      "id": "ln",
+      "name": "lastName",
+      "label": "Last name:",
+      "type": "input",
+      "fieldType": "text",
+      "required": "true",
+      "validations": [
+        {
+          "name": "pattern",
+          "validator": "^[a-zA-Z]+$",
+          "message": "Accept only Text"
+        }
+      ]
+    }
+  ]
+}

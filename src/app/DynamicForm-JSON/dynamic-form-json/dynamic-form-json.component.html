@@ -44,7 +44,6 @@
                 [validator]="field.validators"
               >
               </app-radiobutton>
-              <!-- <div class="radioBtn"></div> -->
             </div>
 
             <div *ngSwitchCase="'select'">
@@ -54,6 +53,9 @@
                 [control]="field.name"
                 [formGroup]="dynamicForm"
                 [validator]="field.validators"
+                (selectionChange)="
+                  onSelectionChange($event.value, $event.label)
+                "
               >
               </app-selectoption>
             </div>

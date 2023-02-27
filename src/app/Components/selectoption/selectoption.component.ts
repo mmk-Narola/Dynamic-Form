@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 interface Option {
@@ -19,7 +19,17 @@ export class SelectoptionComponent implements OnInit {
   @Input() required?: boolean = false;
   @Input() validator?: any;
 
+  @Output() selectionChange = new EventEmitter<{
+    value: any;
+    label: string;
+  }>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSelectionChange(event: any, control: any) {
+    const value = event.target.value;
+    this.selectionChange.emit({ value, label: control });
+  }
 }

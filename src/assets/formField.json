@@ -135,6 +135,42 @@
         }
       ]
     },
+    {
+      "name": "City",
+      "label": "City",
+      "value": "",
+      "type": "select",
+      "validators": {
+        "required": true
+      },
+      "options": [
+        {
+          "_id": "1",
+          "name": "Surat",
+          "sortname": "surat"
+        },
+        {
+          "_id": "2",
+          "name": "Mumbai",
+          "sortname": "mumbai"
+        },
+        {
+          "_id": "3",
+          "name": "Pune",
+          "sortname": "pune"
+        },
+        {
+          "_id": "4",
+          "name": "Bangalore",
+          "sortname": "bangalore"
+        },
+        {
+          "_id": "5",
+          "name": "Gurugram",
+          "sortname": "gurugram"
+        }
+      ]
+    },
 
     {
       "name": "comments",

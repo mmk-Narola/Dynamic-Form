@@ -6,13 +6,14 @@
         <!-- <span *ngIf="validator.required" class="text-danger">*</span> -->
       </label>
       <div class="col-sm-8">
-        <select class="form-control" [formControlName]="control">
+        <select
+          [name]="control"
+          class="form-control"
+          (change)="onSelectionChange($event, control)"
+          [formControlName]="control"
+        >
           <option value="">Select Option</option>
-          <option
-            value=""
-            *ngFor="let option of options"
-            [value]="option.sortname"
-          >
+          <option value="" *ngFor="let option of options" [value]="option._id">
             {{ option.name }}
           </option>
         </select>

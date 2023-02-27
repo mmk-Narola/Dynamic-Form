@@ -92,6 +92,11 @@ export class DynamicFormJsonComponent implements OnInit {
     }
   }
 
+  onSelectionChange(value: any, label: string) {
+    console.log('Value===>', value);
+    console.log('Value===>', label);
+  }
+
   onSubmit() {
     if (this.dynamicForm.invalid) {
       return;

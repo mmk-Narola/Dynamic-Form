@@ -5,12 +5,14 @@ import { DynamicModelControlComponent } from './dynamic-form-model/dynamic-model
 import { DemoCopmComponent } from './demo-component/demo-copm.component';
 import { DisplayFieldComponent } from './dynamic-form-model/display-field/display-field.component';
 import { DynamicFormJsonComponent } from './DynamicForm-JSON/dynamic-form-json/dynamic-form-json.component';
+import { DynamiformReusablecomComponent } from './DynamicForm-ReusableCom/dynamiform-reusablecom/dynamiform-reusablecom.component';
 
 const routes: Routes = [
   { path: 'dynamic-form-field', component: DynamicFormComponent },
   { path: 'dynamic-model-control', component: DisplayFieldComponent },
   { path: 'dynamic-form-json', component: DynamicFormJsonComponent },
   { path: 'demo', component: DemoCopmComponent },
+  { path: 'reusablecom-form', component: DynamiformReusablecomComponent },
 ];
 
 @NgModule({

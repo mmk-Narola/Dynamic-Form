@@ -1,0 +1,39 @@
+<div class="container">
+  <h3 class="text-center mt-4">DynamicForm with JSON</h3>
+  <form [formGroup]="dynamicForm2" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm-8">
+        <div
+          *ngFor="let field of formField"
+          class="form-row"
+          [ngSwitch]="field.type"
+        >
+          <div class="col-md-12 mb-2">
+            <div *ngSwitchCase="'input'">
+              <app-inputfield
+                [type]="field.fieldType"
+                [label]="field.label"
+                [formGroup]="dynamicForm2"
+                [control]="field.name"
+                [validator]="field.validations"
+              >
+              </app-inputfield>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          [disabled]="dynamicForm2.invalid"
+          class="btn btn-success"
+        >
+          Submit
+        </button>
+      </div>
+
+      <div class="col-sm-4">
+        {{ dynamicForm2.value | json }}
+      </div>
+    </div>
+  </form>
+</div>

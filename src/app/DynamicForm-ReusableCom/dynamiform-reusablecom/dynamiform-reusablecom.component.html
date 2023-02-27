@@ -1,0 +1,79 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-3">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-4 p-md-5">
+            <h3 class="md-4 pb-1 pb-md-0 mb-md-4">Registration Form</h3>
+            <div
+              class="text-danger text-center mb-md-2"
+              *ngIf="reusableComDyanicform.invalid && isSubmiit"
+            >
+              All Form Field Are Required
+            </div>
+            <form [formGroup]="reusableComDyanicform" (ngSubmit)="ngSubmit()">
+              <div *ngFor="let form_elem of formField">
+                <div [ngSwitch]="form_elem.type">
+                  <div *ngSwitchCase="'input'">
+                    <app-inputfield
+                      [type]="form_elem.fieldType"
+                      [label]="form_elem.label"
+                      [formGroup]="reusableComDyanicform"
+                      [control]="form_elem.name"
+                      [required]="form_elem.required"
+                    >
+                    </app-inputfield>
+                  </div>
+                  <div *ngSwitchCase="'radio'">
+                    <app-radiobutton
+                      [option]="form_elem.options"
+                      [label]="form_elem.label"
+                      [control]="form_elem.name"
+                      [formGroup]="reusableComDyanicform"
+                      [required]="form_elem.required"
+                    >
+                    </app-radiobutton>
+                  </div>
+
+                  <div *ngSwitchCase="'select'">
+                    <app-selectoption
+                      [options]="form_elem.options"
+                      [label]="form_elem.label"
+                      [control]="form_elem.name"
+                      [formGroup]="reusableComDyanicform"
+                      (selectionChange)="
+                        onSelectionChange($event.value, $event.label)
+                      "
+                    >
+                    </app-selectoption>
+                  </div>
+                  <div *ngSwitchCase="'textarea'">
+                    <app-textarea
+                      [label]="form_elem.label"
+                      [formGroup]="reusableComDyanicform"
+                      [control]="form_elem.name"
+                    >
+                    </app-textarea>
+                  </div>
+                  <div *ngSwitchCase="'checkbox'">
+                    <app-checkbox
+                      [label]="form_elem.value"
+                      [formGroup]="reusableComDyanicform"
+                      [control]="form_elem.name"
+                    ></app-checkbox>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 pt-2">
+                <input class="btn btn-primary" type="submit" value="Submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

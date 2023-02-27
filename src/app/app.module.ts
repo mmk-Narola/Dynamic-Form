@@ -16,6 +16,7 @@ import { DemoCopmComponent } from './demo-component/demo-copm.component';
 import { FormFieldsComponent } from './dynamic-form-model/form-fields/form-fields.component';
 import { DisplayFieldComponent } from './dynamic-form-model/display-field/display-field.component';
 import { DynamicFormJsonComponent } from './DynamicForm-JSON/dynamic-form-json/dynamic-form-json.component';
+import { DynamiformReusablecomComponent } from './DynamicForm-ReusableCom/dynamiform-reusablecom/dynamiform-reusablecom.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DynamicFormJsonComponent } from './DynamicForm-JSON/dynamic-form-json/d
     FormFieldsComponent,
     DisplayFieldComponent,
     DynamicFormJsonComponent,
+    DynamiformReusablecomComponent,
   ],
   imports: [
     BrowserModule,
